@@ -34,7 +34,7 @@ fun ProcesoPagina(
     Canvas(modifier = Modifier.fillMaxWidth()) {
         drawCircle(
             color = Color.Red,
-            radius = 1200f ,
+            radius = 1200f
         )
 
     }
