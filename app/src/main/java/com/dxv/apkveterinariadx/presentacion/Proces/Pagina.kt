@@ -14,5 +14,5 @@ val paginas = listOf(
         Titulo = "Bienvenido a VeterinariaDx",
         Descripcion = "La mejor veterinaria de la ciudad",
         Imagen = com.dxv.apkveterinariadx.R.drawable.veterinaria_principal
-    ),
+    )
 )
