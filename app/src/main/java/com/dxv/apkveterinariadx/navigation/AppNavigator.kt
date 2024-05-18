@@ -18,8 +18,6 @@ fun AppNavigator() {
         composable("login-pagina") {
             LoginPagina(navController = navController)
         }
-        // Aquí puedes agregar más rutas según sea necesario
-        // Ejemplo: composable("product_list") { ProductListPage(navController = navController) }
-        // Ejemplo: composable("service_reservation") { ServiceReservationPage(navController = navController) }
+
     }
 }

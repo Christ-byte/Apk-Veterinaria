@@ -129,7 +129,7 @@ fun ProcesoPagina(
                 contentPadding = PaddingValues(vertical = MediumPadding1)
             ) {
                 Text(
-                    text = "Ingresar",
+                    text = "Siguiente",
                     modifier = Modifier.fillMaxWidth(),
                     style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                     color = Color.White,
