@@ -1,4 +1,4 @@
-package com.dxv.apkveterinariadx.presentacion.Proces.compontes
+package com.dxv.apkveterinariadx.presentacion.process.screens
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -11,14 +11,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
@@ -30,97 +32,95 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.dxv.apkveterinariadx.R
-import com.dxv.apkveterinariadx.presentacion.Proces.Pagina
-import com.dxv.apkveterinariadx.presentacion.Proces.compontes.Dimens.MaximPadding1
-import com.dxv.apkveterinariadx.presentacion.Proces.compontes.Dimens.MaximPadding2
-import com.dxv.apkveterinariadx.presentacion.Proces.compontes.Dimens.MediumPadding1
-import com.dxv.apkveterinariadx.presentacion.Proces.compontes.Dimens.MediumPadding2
-import com.dxv.apkveterinariadx.presentacion.Proces.paginas
+import com.dxv.apkveterinariadx.presentacion.process.compontes.Dimens
 
 @Composable
-fun ProcesoPagina(
+fun LoginPagina(
     modifier: Modifier = Modifier,
-    pagina: Pagina
+    navController: NavController
 ) {
     val bottomColor = colorResource(id = R.color.principalYellow)
-    // Canvas como fondo
-    Box(modifier = modifier) {
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.BottomStart
+    ) {
+        //Canvas como fondo
         Canvas(modifier = Modifier.fillMaxSize()) {
             val width = size.width
             val height = size.height
 
-            // Dibuja el rectángulo blanco en la mitad superior
+            // Dibuja rectangulo
             drawRect(
-                color = Color.White,
+                color = bottomColor,
                 size = Size(width, height)
             )
 
-            // Crea un arco de media luna en la mitad inferior
-            val horizontalArc = Path().apply {
-                moveTo(0f, height / 2 )
+            val cornerRadius = 120f
+            val rectHeight = height - height/2 + height/8 // Altura del rectángulo (mitad de la altura del canvas)
+            val rectWidth = width
+
+            val horizontalSeparation = Path().apply {
+                moveTo(0f, height)
+                lineTo(0f, height - rectHeight + cornerRadius)
                 arcTo(
-                    rect = Rect(
-                        left = 0f,
-                        top = height / 2 - (width / 2),
-                        right = width,
-                        bottom = height / 2 + (width / 8)
-                    ),
-                    startAngleDegrees = -180f,
-                    sweepAngleDegrees = -180f,
+                    rect = Rect(0f, height - rectHeight, cornerRadius * 2, height - rectHeight + cornerRadius * 2),
+                    startAngleDegrees = 180f,
+                    sweepAngleDegrees = 90f,
                     forceMoveTo = false
                 )
-                lineTo(width, height)
-                lineTo(0f, height)
+                lineTo(rectWidth - cornerRadius, height - rectHeight)
+                arcTo(
+                    rect = Rect(rectWidth - cornerRadius * 2, height - rectHeight, rectWidth, height - rectHeight + cornerRadius * 2),
+                    startAngleDegrees = -90f,
+                    sweepAngleDegrees = 90f,
+                    forceMoveTo = false
+                )
+                lineTo(rectWidth, height)
                 close()
             }
 
-            // Recorta el canvas en un arco media luna
-            clipPath(horizontalArc) {
-                // Dibujar el rectángulo amarillo en la mitad inferior
+            // Recorta
+            clipPath(horizontalSeparation) {
+                // Dibuja rectangulo
                 drawRect(
-                    color = bottomColor,
+                    color = Color.White,
                     size = Size(width, height)
                 )
             }
         }
-
         // Columna que contiene la imagen y el texto
-        Column(modifier = Modifier.fillMaxWidth(),
+        Column(
+            modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(0.6f),
-                painter = painterResource(id = pagina.Imagen),
-                contentDescription = null,
-                contentScale = ContentScale.Crop
-            )
-            Spacer(modifier = Modifier.height(MediumPadding1))
             Text(
-                text = pagina.Titulo,
-                modifier = Modifier.padding(horizontal = MediumPadding2),
+                text = "Bienvenido",
+                modifier = Modifier.padding(horizontal = Dimens.MediumPadding2),
                 style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
-                color = colorResource(id = R.color.white),
+                color = colorResource(id = R.color.gray),
                 textAlign = TextAlign.Center
             )
             Text(
-                text = pagina.Descripcion,
-                modifier = Modifier.padding(horizontal = MediumPadding2),
+                text = "Email",
+                modifier = Modifier.padding(horizontal = Dimens.MediumPadding2),
                 style = MaterialTheme.typography.bodyMedium,
-                color = colorResource(id = R.color.white)
+                color = colorResource(id = R.color.gray),
+                textAlign = TextAlign.Left
             )
-
+            
 
             //Boton Ingresar
             ElevatedButton(
-                onClick = {  },
+                onClick = {},
                 modifier = Modifier
-                    .padding(vertical = MaximPadding1, horizontal = MaximPadding2)
+                    .padding(vertical = Dimens.MaximPadding1, horizontal = Dimens.MaximPadding2)
                     .fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(colorResource(id = R.color.gray)), // Personalizar el color de fondo del botón
-                contentPadding = PaddingValues(vertical = MediumPadding1)) {
+                contentPadding = PaddingValues(vertical = Dimens.MediumPadding1)
+            ) {
                 Text(
                     text = "Ingresar",
                     modifier = Modifier.fillMaxWidth(),
@@ -130,13 +130,13 @@ fun ProcesoPagina(
                 )
             }
         }
+
+
     }
 }
 
 @Preview
 @Composable
-fun ProcesoPaginaPreview() {
-    ProcesoPagina(
-        pagina = paginas[0]
-    )
+fun LoginPaginaPreview(){
+    LoginPagina(navController = rememberNavController())
 }

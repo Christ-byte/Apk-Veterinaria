@@ -1,6 +1,5 @@
-package com.dxv.apkveterinariadx.presentacion.Proces
+package com.dxv.apkveterinariadx.presentacion.process
 
-import android.icu.text.CaseMap.Title
 import androidx.annotation.DrawableRes
 
 data class Pagina(
@@ -9,6 +8,7 @@ data class Pagina(
     @DrawableRes val Imagen: Int
 
 )
+
 val paginas = listOf(
     Pagina(
         Titulo = "Bienvenido a VeterinariaDx",
