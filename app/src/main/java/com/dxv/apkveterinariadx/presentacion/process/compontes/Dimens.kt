@@ -8,4 +8,6 @@ object Dimens {
     val MaximPadding1= 40.dp
     val MaximPadding2= 90.dp
 
+    val IndicatorSize = 14.dp
+
 }
