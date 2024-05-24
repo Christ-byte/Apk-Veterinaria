@@ -66,7 +66,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
     //Dependencia Navigation
-    implementation("androidx.navigation:navigation-compose:2.5.3")
+    //implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    //Splash Api
+    //implementation ("androidx.core:core-splashscreen:1.0.1")
+
+    //Dagger Hilt
+    //implementation ("com.google.dagger:hilt-android:2.45")
+
 
 }
