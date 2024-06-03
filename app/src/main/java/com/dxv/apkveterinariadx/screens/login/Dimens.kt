@@ -1,4 +1,4 @@
-package com.dxv.apkveterinariadx.presentacion.process.compontes
+package com.dxv.apkveterinariadx.screens.login
 
 import androidx.compose.ui.unit.dp
 

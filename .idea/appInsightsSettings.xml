@@ -27,10 +27,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.dxv.apkveterinariadx" />
+                  <option name="mobileSdkAppId" value="1:623359503166:android:5762cf76c0fad4636a5a6f" />
+                  <option name="projectId" value="veterinariadx-63494" />
+                  <option name="projectNumber" value="623359503166" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

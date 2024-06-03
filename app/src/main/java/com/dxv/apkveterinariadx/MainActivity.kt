@@ -3,11 +3,9 @@ package com.dxv.apkveterinariadx
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.Modifier
-import com.dxv.apkveterinariadx.presentacion.process.OnboardingScreen
+import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.Surface
+import com.dxv.apkveterinariadx.navigation.AppNavigation
 import com.dxv.apkveterinariadx.ui.theme.ApkVeterinariaDxTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,21 +13,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ApkVeterinariaDxTheme {
-                Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)){
-                    OnboardingScreen()
-
+                Surface(color = colorScheme.background) {
+                    AppNavigation()
                 }
             }
         }
     }
 }
 
-/*
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-*/
+//@Composable
+//@Preview(showSystemUi = true)
+//fun DefaultPreview() {
+//    ApkVeterinariaDxTheme {
+//        Surface(color = colorScheme.background) {
+//            AppNavigation()
+//        }
+//    }
+//}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623359503166",
+    "project_id": "veterinariadx-63494",
+    "storage_bucket": "veterinariadx-63494.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623359503166:android:5762cf76c0fad4636a5a6f",
+        "android_client_info": {
+          "package_name": "com.dxv.apkveterinariadx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ-gEKWF6QD9Wlj0FX8eojuAcsz1peuno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
