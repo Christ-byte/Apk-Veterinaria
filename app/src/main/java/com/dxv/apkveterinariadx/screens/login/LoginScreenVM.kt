@@ -13,6 +13,7 @@ class LoginScreenVM : ViewModel() {
     private val auth: FirebaseAuth = Firebase.auth
     private val _loading = mutableStateOf(false)
 
+
     fun signEmailPassword(email: String, password: String, home: () -> Unit)
     =viewModelScope.launch {
         try {
@@ -22,10 +23,13 @@ class LoginScreenVM : ViewModel() {
                         Log.d("LoginScreenVM", "signInWithEmail:success")
                         home()
                     } else {
-                        Log.d("LoginScreenVM", "signInWithEmail: ${task.result.toString()}")
+                        Log.d("LoginScreenVM", "signInWithEmail: ${task.exception?.message}")
                     }
 
+                }.addOnFailureListener {
+                    Log.e("LoginScreenVM", "Ya estoy controlado")
                 }
+//                .addOnFailureListener(faliure)
         }catch (e: Exception){
             Log.d("LoginScreenVM", "signInWithEmail: ${e.message}")
         }

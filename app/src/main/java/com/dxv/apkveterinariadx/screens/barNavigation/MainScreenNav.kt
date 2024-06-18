@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -28,11 +29,12 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.dxv.apkveterinariadx.screens.pagina1.publicanimals
+import com.dxv.apkveterinariadx.screens.pagina1.homepost
 import com.dxv.apkveterinariadx.screens.pagina2.citas
-import com.dxv.apkveterinariadx.screens.pagina3.ventas
+import com.dxv.apkveterinariadx.screens.pagina2.ventas
+import com.dxv.apkveterinariadx.screens.pagina4.pets
 import com.exyte.animatednavbar.AnimatedNavigationBar
-import com.exyte.animatednavbar.animation.balltrajectory.Parabolic
+import com.exyte.animatednavbar.animation.balltrajectory.Straight
 import com.exyte.animatednavbar.animation.indendshape.Height
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
 import com.exyte.animatednavbar.utils.noRippleClickable
@@ -52,7 +54,8 @@ fun MainScreenNav(
                 modifier = Modifier.height(64.dp).padding(horizontal = 12.dp).offset(y = (-12).dp),
                 selectedIndex = selectedIndex,
                 cornerRadius = shapeCornerRadius(cornerRadius = 34.dp),
-                ballAnimation = Parabolic(tween(300)),
+//                ballAnimation = Parabolic(tween(300)),
+                ballAnimation = Straight(tween(300)),
                 indentAnimation = Height(tween(300)),
                 barColor = MaterialTheme.colorScheme.primary,
                 ballColor = MaterialTheme.colorScheme.primary
@@ -79,9 +82,10 @@ fun MainScreenNav(
         },
         content = {
             when (selectedIndex) {
-                NavigationBarItems.Home.ordinal -> publicanimals(navController)
+                NavigationBarItems.Home.ordinal -> homepost(navController)
                 NavigationBarItems.Favorite.ordinal -> citas(navController)
                 NavigationBarItems.ShoppingCart.ordinal -> ventas(navController)
+                NavigationBarItems.Pets.ordinal -> pets(navController)
             }
         }
     )
@@ -90,7 +94,8 @@ fun MainScreenNav(
 enum class NavigationBarItems(val icon: ImageVector) {
     Home(icon = Icons.Default.Home),
     Favorite(icon = Icons.Default.Favorite),
-    ShoppingCart(icon = Icons.Default.ShoppingCart)
+    ShoppingCart(icon = Icons.Default.ShoppingCart),
+    Pets(icon = Icons.Default.Face)
 
 }
 

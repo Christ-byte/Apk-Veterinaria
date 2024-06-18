@@ -40,7 +40,6 @@ import com.dxv.apkveterinariadx.R
 import com.dxv.apkveterinariadx.data.paginas
 import com.dxv.apkveterinariadx.navigation.AppScreens
 import com.dxv.apkveterinariadx.ui.theme.ApkVeterinariaDxTheme
-import com.dxv.apkveterinariadx.ui.theme.primaryContainerLight
 
 @Composable
 fun Login_after1(
@@ -50,7 +49,7 @@ fun Login_after1(
     val backgroundColor = colorResource(id = R.color.terceroYellow)
     val circleColor = colorResource(id = R.color.secondYellow)
     val textColor = colorResource(id = R.color.black)
-    val buttonColor = colorResource(id = R.color.gray)
+    val buttonColor = colorResource(id = R.color.botoncolor2)
 
     Box(
         modifier = Modifier
@@ -120,11 +119,10 @@ fun Login_after1(
                 ElevatedButton(
                     onClick = {
                         navController.navigate(route = AppScreens.Login_after2.route)
-                    }, colors = ButtonDefaults.buttonColors(
-                        containerColor = primaryContainerLight
+                    }, colors = ButtonDefaults.elevatedButtonColors(
+                        containerColor = buttonColor
                     ),
                     modifier = Modifier
-
                         .padding(30.dp)
                         .width(100.dp)
                 ) {

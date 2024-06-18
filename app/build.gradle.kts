@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.text.google.fonts)
     implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -82,7 +83,9 @@ dependencies {
 
 
     implementation("com.exyte:animated-navigation-bar:1.0.0")
-    
+
+    implementation("com.google.accompanist:accompanist-coil:0.15.0")
+
     //Dependencia Navigation
     //implementation("androidx.navigation:navigation-compose:2.7.7")
 

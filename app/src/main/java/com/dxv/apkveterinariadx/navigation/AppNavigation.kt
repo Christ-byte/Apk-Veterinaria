@@ -8,9 +8,12 @@ import com.dxv.apkveterinariadx.screens.barNavigation.MainScreenNav
 import com.dxv.apkveterinariadx.screens.login.Login_after1
 import com.dxv.apkveterinariadx.screens.login.Login_after2
 import com.dxv.apkveterinariadx.screens.login.Login_index
-import com.dxv.apkveterinariadx.screens.pagina1.publicanimals
+import com.dxv.apkveterinariadx.screens.pagina1.add.addpost
+import com.dxv.apkveterinariadx.screens.pagina1.homepost
+import com.dxv.apkveterinariadx.screens.pagina2.ConsultaScreen
 import com.dxv.apkveterinariadx.screens.pagina2.citas
-import com.dxv.apkveterinariadx.screens.pagina3.ventas
+import com.dxv.apkveterinariadx.screens.pagina2.ventas
+import com.dxv.apkveterinariadx.screens.pagina4.pets
 
 @Composable
 fun AppNavigation() {
@@ -28,14 +31,23 @@ val navController = rememberNavController()
         composable(route = AppScreens.MainScreenNav.route) {
             MainScreenNav(navController)
         }
-        composable(route = AppScreens.publicanimals.route) {
-            publicanimals(navController)
+        composable(route = AppScreens.homepost.route) {
+            homepost(navController)
         }
         composable(route = AppScreens.citas.route) {
             citas(navController)
         }
         composable(route = AppScreens.ventas.route) {
             ventas(navController)
+        }
+        composable(route = AppScreens.pets.route) {
+            pets(navController)
+        }
+        composable(route = AppScreens.addpost.route) {
+            addpost(navController)
+        }
+        composable(route = AppScreens.ConsultaScreen.route) {
+            ConsultaScreen(navController)
         }
     }
 

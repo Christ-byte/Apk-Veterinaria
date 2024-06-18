@@ -42,7 +42,6 @@ import com.dxv.apkveterinariadx.R
 import com.dxv.apkveterinariadx.data.paginas
 import com.dxv.apkveterinariadx.navigation.AppScreens
 import com.dxv.apkveterinariadx.ui.theme.ApkVeterinariaDxTheme
-import com.dxv.apkveterinariadx.ui.theme.primaryContainerLight
 
 @Composable
 fun Login_after2(
@@ -50,7 +49,8 @@ fun Login_after2(
     //modifier: Modifier = Modifier,
     //  pagina: Pagina,
 ) {
-    val buttonColor = colorResource(id = R.color.gray)
+
+    val buttonColor = colorResource(id = R.color.botoncolor2)
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -110,8 +110,7 @@ fun Login_after2(
                         navController.popBackStack()
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = primaryContainerLight),
-                        //contentColor = Color.White),
+                        containerColor = buttonColor),
                     modifier = Modifier
                         .padding(30.dp)
                         .width(100.dp)
@@ -128,7 +127,7 @@ fun Login_after2(
                         navController.navigate(route = AppScreens.Login_index.route)
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = primaryContainerLight),
+                        containerColor = buttonColor),
                     modifier = Modifier
                         .padding(30.dp)
                         .width(100.dp)
