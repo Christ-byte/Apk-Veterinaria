@@ -120,7 +120,7 @@ private fun CarritoItem(item: CarritoItem) {
             Image(
                 painter = rememberImagePainter(item.producto.imagen),
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(), // Ocupa todo el espacio dentro del Box
+                modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
         }

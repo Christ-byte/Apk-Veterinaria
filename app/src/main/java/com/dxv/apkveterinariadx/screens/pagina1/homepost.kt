@@ -104,7 +104,7 @@ fun PostItem(post: Post) {
                         fontWeight = FontWeight.Bold
                     ),
                     modifier = Modifier
-                        .weight(1f) // Ocupa todo el espacio disponible
+                        .weight(1f)
                         .padding(8.dp)
                 )
                 Icon(
